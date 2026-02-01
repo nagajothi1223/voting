@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- STEP 1 : WELCOME -->
+    <div id="welcomeBox">
+        <h1>Online Voting System</h1>
+        <p>Secure & Anonymous Voting</p>
+        <button onclick="goToLogin()">Start Voting</button>
+    </div>
+
+    <!-- STEP 2 : VOTER ID -->
+    <div id="loginBox" class="hidden">
+        <h2>Voter Verification</h2>
+        <input type="text" id="voterId" placeholder="TN-1234-2024">
+        <button onclick="sendOTP()">Send OTP</button>
+        <p class="note">Format: TN-XXXX-YYYY</p>
+    </div>
+
+    <!-- STEP 3 : OTP -->
+    <div id="otpBox" class="hidden">
+        <h2>Enter OTP</h2>
+        <input type="number" id="otpInput" placeholder="Enter OTP">
+        <button onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <!-- STEP 4 : VOTING -->
+    <div id="voteBox" class="hidden">
+        <h2>Cast Your Vote</h2>
+
+        <div class="card">
+            <h3>Candidate A</h3>
+            <button onclick="castVote('A')">Vote</button>
+        </div>
+
+        <div class="card">
+            <h3>Candidate B</h3>
+            <button onclick="castVote('B')">Vote</button>
+        </div>
+
+        <div class="card">
+            <h3>Candidate C</h3>
+            <button onclick="castVote('C')">Vote</button>
+        </div>
+    </div>
+
+    <!-- STEP 5 : DONE -->
+    <div id="doneBox" class="hidden">
+        <h2>Thank You!</h2>
+        <p>Your vote has been successfully submitted.</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
